@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server - Secure Processor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="typing">🧠 Server Terminal: Secure Processing Unit</h1>
+
+    <div class="card">
+        <h2 class="typing">🔒 Encrypted Payload Received</h2>
+        <div class="box">{{ encrypted_input }}</div>
+    </div>
+
+    <div class="arrow">⬇</div>
+
+    <div class="card">
+        <h2 class="typing">🔓 Decryption (Secure Memory)</h2>
+        <p><b>Sequence:</b> {{ decrypted }}</p>
+    </div>
+
+    <div class="arrow">⬇</div>
+
+    <div class="card">
+        <h2 class="typing">🧬 AI Optimization (DNA-BERT)</h2>
+
+        <p><b>Optimized Sequence:</b> {{ edited }}</p>
+
+        <p class="label">Mutations Applied</p>
+        <ul>
+            {% for c in changes %}
+            <li>Position {{ c.position }} → {{ c.old }} → {{ c.new }}</li>
+            {% endfor %}
+        </ul>
+
+        <p class="score">Efficiency: {{ original_score }} → {{ new_score }}</p>
+    </div>
+
+    <div class="arrow">⬇</div>
+
+    <div class="card">
+        <h2 class="typing">🔐 Re-Encrypted Output</h2>
+        <div class="box">{{ encrypted_output }}</div>
+    </div>
+
+    <a href="/?result={{ encrypted_output | urlencode }}" class="back-btn">
+        ⬅ Return Secure Result to Client
+    </a>
+
+</div>
+
+</body>
+</html>

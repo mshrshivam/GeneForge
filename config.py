@@ -1,0 +1,1 @@
+AES_KEY = b'ThisIsASecretKey'  # Must be 16/24/32 bytes
